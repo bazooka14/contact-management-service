@@ -15,5 +15,5 @@ public interface Storage {
 
     boolean delete(int id);
 
-    boolean updateContact(ContactDto contactDto, int id);
+    boolean update(ContactDto contactDto, int id);
 }

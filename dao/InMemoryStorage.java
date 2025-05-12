@@ -32,7 +32,7 @@ public class InMemoryStorage implements Storage {
         int sameIdContactIndex = findIndex(contact.getId());
         if (sameIdContactIndex < 0) {
             contacts.add(contact);
-            return contact;
+            return Utils.copyContact(contact);
         } else {
             return null;
         }
@@ -50,7 +50,7 @@ public class InMemoryStorage implements Storage {
     }
 
     @Override
-    public boolean updateContact(ContactDto contactDto, int id) {
+    public boolean update(ContactDto contactDto, int id) {
         int index = findIndex(id);
         if (index < 0) {
             return false;
