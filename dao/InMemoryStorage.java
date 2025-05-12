@@ -55,12 +55,8 @@ public class InMemoryStorage implements Storage {
         if (index < 0) {
             return false;
         } else {
-            if (contactDto.getName() != null) {
-                contacts.get(id).setName(contactDto.getName());
-            }
-            if (contactDto.getEmail() != null) {
-                contacts.get(id).setEmail(contactDto.getEmail());
-            }
+            contacts.get(id).setName(contactDto.getName());
+            contacts.get(id).setEmail(contactDto.getEmail());
             return true;
         }
     }
