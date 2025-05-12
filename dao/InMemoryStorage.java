@@ -3,6 +3,7 @@ package dao;
 import business.model.Contact;
 import business.model.ContactIdComparator;
 import dto.ContactDto;
+import utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,7 +14,7 @@ public class InMemoryStorage implements Storage {
 
     @Override
     public List<Contact> findAll() {
-        return contacts;
+        return Utils.copyList(contacts);
     }
 
     @Override
@@ -22,7 +23,7 @@ public class InMemoryStorage implements Storage {
         if (index < 0) {
             return null;
         } else {
-            return contacts.get(index);
+            return Utils.copyContact(contacts.get(index));
         }
     }
 
@@ -60,8 +61,8 @@ public class InMemoryStorage implements Storage {
             if (contactDto.getEmail() != null) {
                 contacts.get(id).setEmail(contactDto.getEmail());
             }
+            return true;
         }
-        return false;
     }
 
     private int findIndex(int id) {
