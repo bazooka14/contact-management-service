@@ -4,9 +4,9 @@ public class ContactDto {
     private String name;
     private String email;
 
-    public ContactDto(String email, String name) {
-        this.email = email;
+    public ContactDto(String name, String email) {
         this.name = name;
+        this.email = email;
     }
 
     public String getName() {

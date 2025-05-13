@@ -8,7 +8,7 @@ import infrastructure.idGenerator;
 import java.util.List;
 
 public class ContactServiceImpl implements ContactService {
-    Storage storage;
+    private Storage storage;
 
     public ContactServiceImpl(Storage storage) {
         this.storage = storage;
